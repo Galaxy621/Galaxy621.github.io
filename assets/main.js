@@ -43,7 +43,7 @@ function update_stopwatch() {
 
     const secs = Math.floor(now / 1000) % 60;
     const mins = Math.floor(now / 1000 / 60) % 60;
-    const hours = Math.floor(now / 1000 / 60 / 60) % 24;
+    const hours = Math.floor(now / 1000 / 60 / 60);
 
     $("#milli").text(Math.floor(now % 1000) > 99 ? Math.floor(now % 1000) : Math.floor(now % 1000) > 9 ? `0${Math.floor(now % 1000)}` : `00${Math.floor(now % 1000)}`);
     $("#sec").text(secs > 9 ? secs : `0${secs}`);
@@ -75,7 +75,7 @@ function update_timer() {
 
     const secs = Math.floor(now / 1000) % 60;
     const mins = Math.floor(now / 1000 / 60) % 60;
-    const hours = Math.floor(now / 1000 / 60 / 60) % 24;
+    const hours = Math.floor(now / 1000 / 60 / 60);
 
     $("#milli").text(Math.floor(now % 1000) > 99 ? Math.floor(now % 1000) : Math.floor(now % 1000) > 9 ? `0${Math.floor(now % 1000)}` : `00${Math.floor(now % 1000)}`);
     $("#sec").text(secs > 9 ? secs : `0${secs}`);
@@ -246,8 +246,8 @@ $("#timer-start").on("click", function() {
     console.log(to_timer);
 
     const hours = parseInt(to_timer.slice(0, 2));
-    const mins = parseInt(to_timer.slice(2, 4));
-    const secs = parseInt(to_timer.slice(4, 6));
+    const mins = Math.min(parseInt(to_timer.slice(2, 4)), 59);
+    const secs = Math.min(parseInt(to_timer.slice(4, 6)), 59);
 
     const now = Date.now();
     timer_target = now + (hours * 60 * 60 * 1000) + (mins * 60 * 1000) + (secs * 1000);
