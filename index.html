@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Stopwatch</title>
+        <link rel="stylesheet" href="assets/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="assets/main.js" defer></script>
+    </head>
+
+    <body>
+        <img id="background-image" draggable="false" src="assets/backgrounds/cyberpunk.jpg">
+
+        <div id="clock-container">
+            <div id="clock">
+                <p id="big-time"><span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span></p>
+                <p id="milli">000</p>
+            </div>
+        </div>
+
+        <div id="stopwatch-controls" class="hideable">
+            <a id="start-stopwatch" class="controls">
+                <i id="stopwatch-play-icon" class="fas fa-play"></i>
+                <i id="stopwatch-pause-icon"  class="fas fa-pause" style="display: none"></i>
+            </a>
+            <a id="reset-stopwatch" class="controls"><i class="fas fa-redo"></i></a>
+        </div>
+
+        <div id="timer-controls" class="hideable">
+            <a id="start-timer" class="controls">
+                <i id="timer-play-icon" class="fas fa-play"></i>
+                <i id="timer-pause-icon"  class="fas fa-pause" style="display: none"></i>
+            </a>
+            <a id="reset-timer" class="controls"><i class="fas fa-redo"></i></a>
+        </div>
+
+
+        <div id="timer-setup-controls" class="hideable">
+            <!-- 1 to 5 -->
+            <div id="timer-upper">
+                <a id="timer-1" class="controls">1</a>
+                <a id="timer-2" class="controls">2</a>
+                <a id="timer-3" class="controls">3</a>
+                <a id="timer-4" class="controls">4</a>
+                <a id="timer-5" class="controls">5</a>
+                <a id="timer-start" class="controls wide">Start</a>
+            </div>
+
+            <!-- 6 to 0 -->
+            <div id="timer-lower">
+                <a id="timer-6" class="controls">6</a>
+                <a id="timer-7" class="controls">7</a>
+                <a id="timer-8" class="controls">8</a>
+                <a id="timer-9" class="controls">9</a>
+                <a id="timer-0" class="controls">0</a>
+                <a id="timer-clear" class="controls wide">Clear</a>
+            </div>
+        </div>
+
+        <div id="settings-tray">
+            <a id="settings-button" class="options"><i class="fas fa-cog"></i></a>
+            <a id="stopwatch-button" class="options"><i class="fas fa-stopwatch"></i></i></a>
+            <a id="timer-button" class="options"><i class="fas fa-hourglass"></i></i></a>
+            <a id="clock-button" class="options"><i class="fas fa-clock"></i></a>
+
+
+        </div>
+    </body>
+</html>
